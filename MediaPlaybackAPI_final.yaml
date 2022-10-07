@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   description: access token changed accessCXone media and metadata of the file. When playing back an interaction, the API transfers the interaction metadata and a link to the media file (voice-only and voice-and-screen media types) or the interaction metadata and the transcript (chat and email media types). When downloading, the API transfers a link to the media file.
-  version: "V1"
+  version: "V2"
   title: Media Playback API
   contact:
     email: 'R&DApiTeam@niceincontact.com' 
