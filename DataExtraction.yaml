@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Data Extraction APIs - V1
-  description: The Data Extraction API let you extract data from CXone for external
+  description: This is demo
     reporting purposes.  For example, you can extract QM Workflow data. You must generate
     a key in order to use this API.
   contact:
@@ -9,7 +9,7 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: V1
+  version: V2
 servers:
 - url: https://na1.nice-incontact.com/data-extraction/V1
   description: Production Oregon Environment (uses live data)
@@ -67,7 +67,7 @@ paths:
       x-cxone-api-key: 1168ae16-a6bb-4bf9-893e-3b07347a5ea3
     post:
       tags:
-      - Extracting Data
+      - Extracting Data from API
       summary: Prepares requested data for extraction.
       description: After a request to extract data is made, the data is gathered and
         prepared for extraction. The data is available in S3 as a csv file for 24
