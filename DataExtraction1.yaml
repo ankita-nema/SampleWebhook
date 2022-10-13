@@ -1,6 +1,4 @@
 
-
-servers:
 - url: https://na1.nice-incontact.com/data-extraction/V1
   description: Production Oregon Environment (uses live data)
   variables: {}
