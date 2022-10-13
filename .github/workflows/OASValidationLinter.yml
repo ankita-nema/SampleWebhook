@@ -1,0 +1,43 @@
+# This is a basic workflow to validate API documentation file which is checked in 
+
+name: API Format validation
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    name: MegaLinter
+    runs-on: ubuntu-latest
+    steps:
+      # Git Checkout
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+     # MegaLinter
+      - name: MegaLinter - API JSON Validation
+        id: ml
+        # You can override MegaLinter flavor used to have faster performances
+        # More info at https://megalinter.github.io/flavors/
+        uses: oxsecurity/megalinter/flavors/dart@v5
+        env:
+          # All available variables are described in documentation
+          # https://megalinter.github.io/configuration/
+          VALIDATE_ALL_CODEBASE: false # Validates all source when push on main, else just the git diff with main. Override with true if you always want to lint all sources
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
+          OPENAPI_SPECTRAL_FILTER_REGEX_INCLUDE: .*api\/(.*)\.yaml
+          OPENAPI_SPECTRAL_CLI_LINT_MODE: file
+          OPENAPI_SPECTRAL_FILE_EXTENSIONS: ".yaml"
+          OPENAPI_SPECTRAL_RULES_PATH: "./validation/yamlSchema/openapi/1-0-0.yaml"
+          ENABLE_LINTERS: OPENAPI_SPECTRAL         
+          PRINT_ALPACA: false
+          # ADD YOUR CUSTOM ENV VARIABLES HERE OR DEFINE THEM IN A FILE .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
+          # DISABLE: COPYPASTE,SPELL # Uncomment to disable copy-paste and spell checks
