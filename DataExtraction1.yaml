@@ -1,4 +1,4 @@
-openapi: 3.0.1
+
 
 servers:
 - url: https://na1.nice-incontact.com/data-extraction/V1
