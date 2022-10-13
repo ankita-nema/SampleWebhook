@@ -1,0 +1,6 @@
+#custom rules for OpenAPI 
+extends: [[spectral:oas, all]]
+rules:
+  operation-operationId: false
+  operation-tags: false
+ 
