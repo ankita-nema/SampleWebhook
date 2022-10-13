@@ -7,6 +7,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
+   
   
 
   # Allows you to run this workflow manually from the Actions tab
@@ -21,6 +22,8 @@ jobs:
       # Git Checkout
       - name: Checkout Code
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
      # MegaLinter
       - name: MegaLinter - API JSON Validation
@@ -32,7 +35,7 @@ jobs:
           # All available variables are described in documentation
           # https://megalinter.github.io/configuration/
           VALIDATE_ALL_CODEBASE: false # Validates all source when push on main, else just the git diff with main. Override with true if you always want to lint all sources
-          GITHUB_TOKEN: ${{ secrets.SPECTRAL_TOKEN }}       
+          SPECTRAL_TOKEN: ${{ secrets.SPECTRAL_TOKEN }}       
           OPENAPI_SPECTRAL_FILTER_REGEX_INCLUDE: .*api\/(.*)\.yaml
           OPENAPI_SPECTRAL_CLI_LINT_MODE: file
           OPENAPI_SPECTRAL_FILE_EXTENSIONS: ".yaml"
