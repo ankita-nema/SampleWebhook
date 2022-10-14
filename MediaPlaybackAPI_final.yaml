@@ -13,7 +13,7 @@ tags:
     description: The API returns interaction metadata and a link to the media file or the interaction metadata and the transcript.
 paths:
   /media-playback/v1/contacts:
-    get:
+    adfdsfdg:
       tags:
         - Accessing the Recording Media
       summary: Access the full contact (the entire interaction with all segments) based on ACD Contact ID.
