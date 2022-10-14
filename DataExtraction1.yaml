@@ -86,7 +86,7 @@ paths:
           description: Internal Server Error
       security:
       - bearerAuth: []
-      x-cxone-audience: company-internal
+    
       x-cxone-api-key: a52e0eb1-5cfb-4da6-9b49-ba3f36b91735
   
   /jobs/{jobId}:
