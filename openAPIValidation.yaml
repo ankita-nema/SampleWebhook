@@ -4,3 +4,10 @@ rules:
   operation-operationId: false
   operation-tags: false
  
+cxone-x-cxone-audience-exist:
+    description: Each API operation (GET,POST,DELETE, etc) must have a 'x-cxone-audience' extension'
+    severity: error
+    given: $.paths[*][get,put,post,delete,options,head,patch,trace]
+    then:
+      field: x-cxone-audience
+      function: truthy             
