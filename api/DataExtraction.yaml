@@ -1,9 +1,5 @@
 openapi: 3.0.1
-info:
-  title: Data Extraction APIs - V1
-  description: This is new file version
-    reporting purposes.  For example, you can extract QM Workflow data. You must generate
-    a key in order to use this API.
+
   
   license:
     name: Apache 2.0
@@ -137,7 +133,7 @@ paths:
           description: Internal Server Error
       security:
       - bearerAuth: []
-      x-cxone-audience: company-internal
+    
       x-cxone-api-key: 6cd12056-d74b-4f0a-8d0e-7039e65c5551
   /jobs/sync:
     post:
