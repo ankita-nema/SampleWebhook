@@ -1,28 +1,3 @@
-
-- url: https://na1.nice-incontact.com/data-extraction/V1
-  description: Production Oregon Environment (uses live data)
-  variables: {}
-- url: https://au1.nice-incontact.com/data-extraction/V1
-  description: Production Australia Environment (uses live data)
-  variables: {}
-- url: https://eu1.niceincontact.com/data-extraction/V1
-  description: Production Frankfurt Environment (uses live data)
-  variables: {}
-- url: https://na1.staging.nice-incontact.com/data-extraction/V1
-  description: Staging Environment
-  variables: {}
-- url: https://na1.test.nice-incontact.com/data-extraction/V1
-  description: Test Environment
-  variables: {}
-- url: https://nvir.test.niceincontact.com/data-extraction/V1
-  description: North Virginia Test Environment
-  variables: {}
-- url: https://na1.dev.nice-incontact.com/data-extraction/V1
-  description: Dev Environment
-  variables: {}
-- url: https://virtserver.swaggerhub.com/nice-api/data-extraction/V1
-  description: SwaggerHub API Auto Mocking for data extraction
-  variables: {}
 tags:
 - name: Extracting Data
 - name: Internal Data Extraction APIs
@@ -126,7 +101,7 @@ paths:
           description: Internal Server Error
       security:
       - bearerAuth: []
-      x-cxone-audience: company-internal
+   
       x-cxone-api-key: 6cd12056-d74b-4f0a-8d0e-7039e65c5551
   /jobs/sync:
     post:
