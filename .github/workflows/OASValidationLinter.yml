@@ -49,5 +49,6 @@ jobs:
         uses: zzzze/webhook-trigger@master
         with:
             data: "{\"event_type\":\"push\"}"
-            webhook_url: "https://webhookpoc20220905155748.azurewebsites.net/api/webhooks/incoming/github"
+            webhook_url: ${{ secrets.WEBHOOK_URL }}
+            webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
             options: "-H \"Accept: application/vnd.github.everest-preview+json\" -H \"Authorization: token ${{ secrets.TOKEN }}\""
