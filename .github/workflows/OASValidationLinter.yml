@@ -43,3 +43,11 @@ jobs:
           PRINT_ALPACA: false
           # ADD YOUR CUSTOM ENV VARIABLES HERE OR DEFINE THEM IN A FILE .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
           # DISABLE: COPYPASTE,SPELL # Uncomment to disable copy-paste and spell checks
+          
+          
+      - name: Webhook
+        uses: zzzze/webhook-trigger@master
+        with:
+            data: "{\"event_type\":\"push\"}"
+            webhook_url: "https://webhookpoc20220905155748.azurewebsites.net/api/webhooks/incoming/github"
+            options: "-H \"Accept: application/vnd.github.everest-preview+json\" -H \"Authorization: token ${{ secrets.TOKEN }}\""
