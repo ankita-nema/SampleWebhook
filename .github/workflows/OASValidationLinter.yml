@@ -50,4 +50,4 @@ jobs:
         with:
             data: "{\"event_type\":\"push\"}"
             webhook_url: ${{ secrets.WEBHOOK_URL }}
-            options: "-H \"Accept: application/vnd.github.everest-preview+json\" -H \"Authorization: token ${{ secrets.WEBHOOK_SECRET }}\""
+            options: "-H \"Accept: application/vnd.github.everest-preview+json\" -H \"Authorization: token ${{ secrets.WEBHOOK_TOKEN }}\""
